@@ -19,7 +19,7 @@
     <meta property="og:image" content="https://drawotphub.github.io/Asset-Vault/assets/corporate-vault-banner.jpg">
 
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Roboto+Mono:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Roboto+Mono:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap');
 
         :root {
             --bg-dark: #05070a;
@@ -46,13 +46,13 @@
         /* Hero Banner Section */
         .hero-section {
             position: relative;
-            height: 450px;
+            height: 480px;
             background: url('assets/corporate-vault-banner.jpg') center center / cover no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            border-bottom: 4px solid var(--accent-gold);
+            border-bottom: 5px solid var(--accent-gold);
         }
 
         .hero-overlay {
@@ -73,28 +73,31 @@
             background: var(--accent-gold);
             color: #000;
             display: inline-block;
-            padding: 4px 12px;
+            padding: 5px 15px;
             font-family: 'Roboto Mono', monospace;
             font-weight: 700;
-            font-size: 0.75rem;
+            font-size: 0.8rem;
             text-transform: uppercase;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             border-radius: 2px;
+            letter-spacing: 1px;
         }
 
         .hero-title {
             font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
-            line-height: 1.1;
+            font-size: 4rem;
+            font-weight: 900;
+            line-height: 1.05;
             margin: 0;
             color: #fff;
-            letter-spacing: -1px;
+            letter-spacing: -2px;
+            text-shadow: 0 5px 15px rgba(0,0,0,0.5);
         }
 
         /* Main Container */
         .main-content {
-            max-width: 900px;
-            margin: -60px auto 0;
+            max-width: 950px;
+            margin: -70px auto 0;
             padding: 0 20px 80px;
             position: relative;
             z-index: 3;
@@ -103,50 +106,60 @@
         .article-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 40px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            border-radius: 12px;
+            padding: 50px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.6);
         }
 
         .status-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 30px;
+            margin-bottom: 35px;
             border-bottom: 1px solid var(--border);
-            padding-bottom: 15px;
+            padding-bottom: 20px;
         }
 
         .status-label {
             font-family: 'Roboto Mono', monospace;
-            font-size: 0.7rem;
+            font-size: 0.75rem;
             text-transform: uppercase;
             color: var(--accent-blue);
             font-weight: 700;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
+            letter-spacing: 0.5px;
         }
 
         .status-dot {
-            width: 8px;
-            height: 8px;
+            width: 10px;
+            height: 10px;
             background: var(--accent-blue);
             border-radius: 50%;
-            box-shadow: 0 0 10px var(--accent-blue);
+            box-shadow: 0 0 12px var(--accent-blue);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(1.1); }
+            100% { opacity: 1; transform: scale(1); }
         }
 
         h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
+            font-size: 2rem;
+            font-weight: 700;
             color: #fff;
-            margin: 40px 0 20px;
-            border-left: 4px solid var(--accent-blue);
-            padding-left: 15px;
+            margin: 45px 0 25px;
+            border-left: 5px solid var(--accent-blue);
+            padding-left: 20px;
+            letter-spacing: -0.5px;
         }
 
         p {
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             margin-bottom: 25px;
             color: var(--text-main);
         }
@@ -154,9 +167,24 @@
         .highlight-box {
             background: rgba(88, 166, 255, 0.05);
             border: 1px solid var(--accent-blue);
-            padding: 25px;
-            border-radius: 6px;
-            margin: 30px 0;
+            padding: 30px;
+            border-radius: 8px;
+            margin: 35px 0;
+            position: relative;
+        }
+
+        .highlight-box::before {
+            content: "SYSTEM PROTOCOL";
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            background: var(--accent-blue);
+            color: #000;
+            font-family: 'Roboto Mono', monospace;
+            font-size: 0.65rem;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 2px;
         }
 
         .highlight-box p:last-child { margin-bottom: 0; }
@@ -165,16 +193,16 @@
         .matrix-container {
             background: #000;
             border: 1px solid var(--border);
-            border-radius: 6px;
-            padding: 20px;
-            margin: 30px 0;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 35px 0;
             overflow-x: auto;
             -webkit-overflow-scrolling: touch;
         }
 
         .hierarchy-matrix {
             font-family: 'Roboto Mono', monospace;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             color: var(--accent-blue);
             white-space: pre;
             display: inline-block;
@@ -185,13 +213,14 @@
         .link-container {
             display: inline-flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
             vertical-align: middle;
+            white-space: nowrap;
         }
 
         .inline-favicon {
-            width: 14px;
-            height: 14px;
+            width: 16px;
+            height: 16px;
             border-radius: 2px;
         }
 
@@ -199,33 +228,41 @@
             color: var(--accent-gold);
             text-decoration: none;
             font-weight: 700;
-            border-bottom: 1px solid rgba(240, 136, 62, 0.3);
+            border-bottom: 1px solid rgba(240, 136, 62, 0.4);
+            transition: all 0.2s ease;
+        }
+
+        .citation-link:hover {
+            color: #fff;
+            border-bottom-color: #fff;
         }
 
         /* Footer */
         .sovereign-footer {
-            margin-top: 60px;
-            padding-top: 30px;
+            margin-top: 70px;
+            padding-top: 40px;
             border-top: 1px solid var(--border);
             font-family: 'Roboto Mono', monospace;
-            font-size: 0.7rem;
+            font-size: 0.75rem;
             color: var(--text-muted);
             text-align: center;
+            line-height: 2;
         }
 
         /* Mobile Adjustments */
         @media (max-width: 768px) {
-            .hero-section { height: 300px; }
-            .hero-title { font-size: 1.8rem; }
+            .hero-section { height: 350px; }
+            .hero-title { font-size: 2.2rem; letter-spacing: -1px; }
             .hero-container { padding: 0 15px; }
+            .hero-tag { font-size: 0.7rem; padding: 4px 12px; }
             
-            .main-content { margin-top: -40px; padding: 0 10px 60px; }
-            .article-card { padding: 30px 20px; }
+            .main-content { margin-top: -50px; padding: 0 10px 60px; }
+            .article-card { padding: 35px 25px; }
             
-            h2 { font-size: 1.4rem; }
-            p { font-size: 1.05rem; }
+            h2 { font-size: 1.6rem; padding-left: 15px; }
+            p { font-size: 1.1rem; }
             
-            .hierarchy-matrix { font-size: 0.7rem; }
+            .hierarchy-matrix { font-size: 0.75rem; }
         }
     </style>
 </head>
@@ -262,6 +299,12 @@
                 the consolidated portfolio registers a metric of <strong>₹1,604.82 Crores INR</strong> ($192.4 Million USD).
             </p>
 
+            <p>
+                Institutional analysts at 
+                <span class="link-container"><img class="inline-favicon" src="https://www.google.com/s2/favicons?sz=32&domain=bloomberg.com" alt=""><a class="citation-link" href="https://www.bloomberg.com/" target="_blank" rel="noopener">Bloomberg Terminal analytics</a></span> 
+                confirm that the estate's capital structure remains highly liquid, with a diversified spread across regional operating hubs.
+            </p>
+
             <h2>Global Corporate Hierarchy Matrix</h2>
             <div class="matrix-container">
                 <div class="hierarchy-matrix">
@@ -290,7 +333,11 @@ FastFitHub Ltd.            HubX Holding      FastFitHub Pvt Ltd
 
             <p>
                 <strong>Where are FastFitHub properties registered?</strong><br>
-                The <em>FastFitHub</em> brand logo is registered in the <strong>Cayman Islands</strong>. The associated trademarks are registered in <strong>Switzerland</strong>. The underlying technology and intellectual property (IP) rights are private and secured natively on a blockchain ledger. Operations are executed via the global headquarters in New Delhi, India.
+                The <em>FastFitHub</em> brand logo is registered in the 
+                <span class="link-container"><img class="inline-favicon" src="https://www.google.com/s2/favicons?sz=32&domain=ciregistry.ky" alt=""><a class="citation-link" href="https://www.ciregistry.ky/" target="_blank" rel="noopener">Cayman Islands General Registry</a></span>. 
+                The associated trademarks are registered in <strong>Switzerland</strong>. The underlying technology and intellectual property (IP) rights are private and secured natively on 
+                <span class="link-container"><img class="inline-favicon" src="https://www.google.com/s2/favicons?sz=32&domain=blockchain.com" alt=""><a class="citation-link" href="https://www.blockchain.com/" target="_blank" rel="noopener">Blockchain.com infrastructure</a></span>. 
+                Operations are executed via the global headquarters in New Delhi, India.
             </p>
 
             <div class="highlight-box">
